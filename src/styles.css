@@ -1,0 +1,113 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  @font-face {
+    font-family: "Cormorant Garamond";
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjQAllvuQWJ5haf.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Karla";
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/karla/v31/qkBbXvYC6trAT55ZBi1ueQVIjQTD-JqqFENLR7fHGw.woff2") format("woff2");
+  }
+}
+
+@theme inline {
+  --font-display: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --font-sans: "Karla", system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-lac: var(--lac);
+  --color-ochre: var(--ochre);
+  --color-leaf: var(--leaf);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+:root {
+  /* Terracotta & Sage — earthy, grounded, artisan */
+  --background: oklch(0.96 0.012 90);          /* warm off-white */
+  --foreground: oklch(0.25 0.03 45);            /* deep walnut ink */
+  --card: oklch(0.98 0.008 95);
+  --card-foreground: oklch(0.25 0.03 45);
+  --popover: oklch(0.98 0.008 95);
+  --popover-foreground: oklch(0.25 0.03 45);
+  --primary: oklch(0.58 0.14 35);               /* terracotta */
+  --primary-foreground: oklch(0.97 0.012 90);
+  --secondary: oklch(0.92 0.025 85);            /* soft sand */
+  --secondary-foreground: oklch(0.3 0.04 45);
+  --muted: oklch(0.93 0.018 90);
+  --muted-foreground: oklch(0.45 0.03 55);
+  --accent: oklch(0.62 0.08 145);               /* sage green */
+  --accent-foreground: oklch(0.98 0.012 90);
+  --destructive: oklch(0.55 0.2 30);
+  --destructive-foreground: oklch(0.97 0.012 90);
+  --border: oklch(0.86 0.02 80);
+  --input: oklch(0.86 0.02 80);
+  --ring: oklch(0.58 0.14 35);
+
+  --lac: oklch(0.58 0.14 35);                   /* terracotta */
+  --ochre: oklch(0.72 0.11 65);                 /* warm peach */
+  --leaf: oklch(0.45 0.08 145);                 /* deep sage */
+  --ink: oklch(0.25 0.03 45);
+  --cream: oklch(0.96 0.012 90);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(at 10% 0%, oklch(0.88 0.05 145 / 0.35) 0px, transparent 50%),
+      radial-gradient(at 90% 100%, oklch(0.85 0.08 40 / 0.35) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    font-weight: 500;
+  }
+}
